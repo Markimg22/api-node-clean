@@ -1,0 +1,50 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @unique @default(uuid())
+  name      String
+  email     String   @unique
+  avatarUrl String?
+  googleId  String   @unique
+  createdAt DateTime @default(now())
+
+  tasks       Task[]
+  performance Performance?
+}
+
+model Task {
+  id          String    @id @unique @default(uuid())
+  emoji       String?
+  title       String
+  description String?
+  completed   Boolean   @default(false)
+  important   Boolean   @default(false)
+  urgent      Boolean   @default(false)
+  startDate   DateTime?
+  endDate     DateTime?
+  dailyTask   Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  userId      String
+
+  user User @relation(fields: [userId], references: [id])
+}
+
+model Performance {
+  id                      String   @id @unique @default(uuid())
+  minutesOfFocus          Int      @default(0)
+  minutesOfRest           Int      @default(0)
+  minutesOnImportantTasks Int      @default(0)
+  minutesOnUrgentTasks    Int      @default(0)
+  updatedAt               DateTime @updatedAt
+  userId                  String   @unique
+
+  user User @relation(fields: [userId], references: [id])
+}
