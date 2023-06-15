@@ -1,13 +1,6 @@
 <h1 align="center" style="font-weight: bold;">
-  Infocus
+  API NodeJS Clean
 </h1>
-
-<p align="center">
-	<strong>Focus on your tasks!</strong> 👀
-</p>
-<p align="center">
-	<strong>🚧 Building...</strong>
-</p>
 
 > ## **📌 Topics:**
 
@@ -24,9 +17,7 @@
 <br />
 
 <p style="text-align: justify;">
-  <strong>📝 Infocus:</strong>
-  It is a Time Management tool, available on both Web and Mobile platforms. Infocus uses the Pomodoro method integrated with the Time Matrix, for better utilization of your time. Register your tasks, focus, and leave the rest to us. 😉
-  </span>
+  A NodeJS API using best practices
 </p>
 
 <br />
@@ -35,28 +26,21 @@
 
 <br />
 
-### **Back-end:**
-
 - Typescript
 - NodeJS
 - Express
 - PrismaORM
+- Docker
+- Swagger
+- Husky
 
 <br />
 
-### **Front-end:**
+> ## **📚 Practices:**
 
-#### Web:
-- Typescript
-- ReactJS
-- NextJS
-
-#### Mobile:
-- React Native
-- Expo
-- Styled Components
-
-<br />
+- TDD
+- Clean Architecture
+- S.O.L.I.D.
 
 > ## **👨‍💻 Authors:**
 
